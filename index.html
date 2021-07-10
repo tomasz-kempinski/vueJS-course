@@ -11,7 +11,19 @@
   <h1>Hello, Vue :)</h1>
 
   <div id="app">
-    <h2>I am the template now </h2>
+    <!--  injecting variable value from js -->
+    <p>{{ title }} - {{ author }} - {{ age }}</p>
+
+    <!-- directive in Vue 'v-on' , wewnątrz " " umieszczamy kod js -->
+    <button v-on:click="age++">Increase age</button>
+    <button v-on:click="age--">Decrease age</button>
+
+    <!-- skrót dla 'v-on' to @ -->
+    <div @click="title = 'something else'">Change book title</div>
+
+    <!-- odwoałnie do funkcji w js -->
+    <div @click="changeTitle('Sherlock Holmes')">Change book title with function</div>
+
   </div>
 
   <script src="app.js"></script>

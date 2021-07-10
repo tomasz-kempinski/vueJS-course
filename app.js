@@ -1,7 +1,18 @@
 const app = Vue.createApp({
-    /* tutaj możemy zdefiniować np. dane, funkcje, template-y 
-    które będą wstrzyknięte i obsługiwane przez Vue */
-    // template: '<h2>I am the template</h2>'
+    data() {           // skrócony zapis funkcji
+        return {
+            title: 'The Lord Of The Rings',
+            author: 'J.R.R. Tolkien',
+            age: 77
+        }
+    },
+    methods: {
+        changeTitle(title) {
+            // poprzez 'this' odwołujemy się do pól z komponentu
+            // this.title = 'Harry Potter'
+            this.title = title
+        }
+    }
 });
 
 app.mount('#app');
