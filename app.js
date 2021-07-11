@@ -1,16 +1,16 @@
 const app = Vue.createApp({
     data() {           // skrócony zapis funkcji
         return {
+            showBooks: true,
             title: 'The Lord Of The Rings',
             author: 'J.R.R. Tolkien',
             age: 77
         }
     },
     methods: {
-        changeTitle(title) {
-            // poprzez 'this' odwołujemy się do pól z komponentu
-            // this.title = 'Harry Potter'
-            this.title = title
+        toggleShowBooks(){
+            // this.showBooks = false
+            this.showBooks = !this.showBooks
         }
     }
 });

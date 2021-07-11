@@ -11,20 +11,28 @@
   <h1>Hello, Vue :)</h1>
 
   <div id="app">
-    <!--  injecting variable value from js -->
-    <p>{{ title }} - {{ author }} - {{ age }}</p>
+    <div v-if="showBooks">
+      <p>{{ title }} - {{ author }} - {{ age }}</p>
+    </div>
 
-    <!-- directive in Vue 'v-on' , wewnątrz " " umieszczamy kod js -->
-    <button v-on:click="age++">Increase age</button>
-    <button v-on:click="age--">Decrease age</button>
+    <button @click="toggleShowBooks">
+      <span v-if="showBooks">Hide Books</span>
+      <!-- <span v-if="!showBooks">Show Books</span> -->
 
-    <!-- skrót dla 'v-on' to @ -->
-    <div @click="title = 'something else'">Change book title</div>
+      <!-- zamiast negacji 'else' -->
+      <span v-else>Show Books</span>
+    </button>
 
-    <!-- odwoałnie do funkcji w js -->
-    <div @click="changeTitle('Sherlock Holmes')">Change book title with function</div>
+    <!-- inny sposób to v-show, działa jak boolean -->
 
+    <!-- ten sposób tylko ukrywa zawartość za pomocą css, 
+    wymaga mniej czasu i resourców niż 'if' który każdorazowo 
+    usuwa i wstrzukyje DOM na zmianę;
+    jeżeli coś na stronie zmienia się często lepiej skorzystać z v-show -->
+
+    <div v-show="showBooks">showing the books</div>
   </div>
+
 
   <script src="app.js"></script>
 </body>
