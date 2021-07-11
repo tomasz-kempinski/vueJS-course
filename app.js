@@ -2,33 +2,16 @@ const app = Vue.createApp({
     data() {           // skrócony zapis funkcji
         return {
             showBooks: true,
-            title: 'The Lord Of The Rings',
-            author: 'J.R.R. Tolkien',
-            age: 77,
-            x: 0,
-            y: 0
+            books: [
+                { title: 'Lord Of The Rings', author: 'J.R.R. Tolkien' },
+                { title: 'Game Of Thrones', author: 'G.R.R. Martin' },
+                { title: 'Harry Potter', author: 'J.K. Rowling' }
+            ]
         }
     },
     methods: {
         toggleShowBooks() {
-            // this.showBooks = false
             this.showBooks = !this.showBooks
-        },
-        // handleEvent(){
-        //     console.log('event');
-        // }
-
-        // zawsze pierwszym domyślnym parametrem jest 'event'
-        // a drugim 'data', niezależnie jak je nazwiemy
-        handleEvent(e, data) {
-            console.log(e, e.type);
-            if (data) {
-                console.log(data);
-            }
-        },
-        handleMouseMove(e) {
-            this.x = e.offsetX
-            this.y = e.offsetY
         }
     }
 });

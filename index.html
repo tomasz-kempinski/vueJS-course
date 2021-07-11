@@ -22,35 +22,22 @@
 
   <div id="app">
     <div v-if="showBooks">
-      <p>{{ title }} - {{ author }} - {{ age }}</p>
+      <!-- <p>{{ books[0].title }} - {{ books[0].author }}</p>
+      <p>{{ books[1].title }} - {{ books[1].author }}</p>
+      <p>{{ books[2].title }} - {{ books[2].author }}</p> -->
+
+      <ul>
+        <li v-for="book in books">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </li>
+      </ul>
     </div>
 
     <button @click="toggleShowBooks">
       <span v-if="showBooks">Hide Books</span>
       <span v-else>Show Books</span>
     </button>
-
-    <br>
-    <!-- mouse events -->
-
-    <!-- mouseover -->
-    <div class="box" @mouseover="handleEvent">mouseover (enter)</div>
-
-    <!-- mouseleave -->
-    <div class="box" @mouseleave="handleEvent">mouseleave</div>
-
-    <!-- dblclick (double click) -->
-    <div class="box" @dblclick="handleEvent">double click</div>
-
-    <!-- mousemove -->
-    <div class="box" @mousemove="handleMouseMove">position - {{ x }} {{ y }}</div>
-
-    <!-- jeżeli nie podamy parametru do metody, domyślnie będzie nim 'event'
-    jeżeli wpiszemy własny parametr, obiekt metody będzie undefined -->
-    <div class="box" @mouseover="handleEvent(5)">mouseover (enter)</div>
-
-    <!-- dlatego jako pierwszy param wpisujemy '$event' a potem nasz param -->
-    <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
   </div>
 
 
