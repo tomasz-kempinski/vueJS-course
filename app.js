@@ -4,9 +4,9 @@ const app = Vue.createApp({
             url: 'http://www.google.com',
             showBooks: true,
             books: [
-                { title: 'Lord Of The Rings', author: 'J.R.R. Tolkien', img: 'assets/1.jpg' },
-                { title: 'Game Of Thrones', author: 'G.R.R. Martin', img: 'assets/2.jpg' },
-                { title: 'Harry Potter', author: 'J.K. Rowling', img: 'assets/3.jpg' },
+                { title: 'Lord Of The Rings', author: 'J.R.R. Tolkien', img: 'assets/1.jpg', isFav: true },
+                { title: 'Game Of Thrones', author: 'G.R.R. Martin', img: 'assets/2.jpg', isFav: false },
+                { title: 'Harry Potter', author: 'J.K. Rowling', img: 'assets/3.jpg', isFav: true },
             ]
         }
     },
