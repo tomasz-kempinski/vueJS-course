@@ -21,6 +21,14 @@
   <h1>Hello, Vue :)</h1>
 
   <div id="app">
+    <!-- attribute binding 'v-bind'-->
+    <a v-bind:href="url">awesome website</a>
+    <br>
+    <br>
+    <!-- v-bind można zastąpić skrótem w postaci samego ':', np.
+    v-bind:href <-> :href -->
+    <a :href="url">awesome website</a>
+
     <div v-if="showBooks">
       <!-- <p>{{ books[0].title }} - {{ books[0].author }}</p>
       <p>{{ books[1].title }} - {{ books[1].author }}</p>
@@ -28,6 +36,7 @@
 
       <ul>
         <li v-for="book in books">
+          <img :src="book.img" :alt="book.title">
           <h3>{{ book.title }}</h3>
           <p>{{ book.author }}</p>
         </li>
