@@ -17,6 +17,12 @@ const app = Vue.createApp({
         toggleIsFav(book) {
             book.isFav = !book.isFav
         }
+    },
+    // computed properties zależą od innych danych (przetworzone dane)
+    computed: {
+        filteredBooks() {
+            return this.books.filter((book) => book.isFav)
+        }
     }
 });
 
