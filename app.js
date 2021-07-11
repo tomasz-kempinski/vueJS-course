@@ -4,13 +4,31 @@ const app = Vue.createApp({
             showBooks: true,
             title: 'The Lord Of The Rings',
             author: 'J.R.R. Tolkien',
-            age: 77
+            age: 77,
+            x: 0,
+            y: 0
         }
     },
     methods: {
-        toggleShowBooks(){
+        toggleShowBooks() {
             // this.showBooks = false
             this.showBooks = !this.showBooks
+        },
+        // handleEvent(){
+        //     console.log('event');
+        // }
+
+        // zawsze pierwszym domyślnym parametrem jest 'event'
+        // a drugim 'data', niezależnie jak je nazwiemy
+        handleEvent(e, data) {
+            console.log(e, e.type);
+            if (data) {
+                console.log(data);
+            }
+        },
+        handleMouseMove(e) {
+            this.x = e.offsetX
+            this.y = e.offsetY
         }
     }
 });
