@@ -1,5 +1,6 @@
 <template>
-  <div class="backdrop" @click="closeModal">
+  <!-- .self ogranicza click event tylko do 'backdrop' -->
+  <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <!-- injecting prop from App.vue -->
       <h1>{{ header }}</h1>
