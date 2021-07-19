@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click="closeModal">
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <!-- injecting prop from App.vue -->
       <h1>{{ header }}</h1>
@@ -12,6 +12,11 @@
 // accepting props
 export default {
   props: ["header", "text", "theme"],
+  methods: {
+    closeModal() {
+      this.$emit("close");
+    },
+  },
 };
 </script>
 

@@ -1,12 +1,10 @@
 <template>
   <h1>{{ title }}</h1>
-  <!-- passing a prop -->
-  <!-- example props named 'header' and 'text' -->
-
-  <!-- <Modal header="Sign up for Giveaway!" text="Grab your ninja swag for half price!" /> -->
-
-  <!-- bind props to data -->
-  <Modal :header="header" :text="text" theme="sale" />
+  <p>Welcome...</p>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+  </div>
+  <button @click="toggleModal">open modal</button>
 </template>
 
 <script>
@@ -17,16 +15,15 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: 'My First Vue App!',
-      header: 'Sign up for Giveaway!',
-      text: 'Grab your ninja swag for half price!'
+      title: "My First Vue App!",
+      header: "Sign up for Giveaway!",
+      text: "Grab your ninja swag for half price!",
+      showModal: false,
     };
   },
   methods: {
-    handleClick() {
-      console.log(this.$refs.name);
-      this.$refs.name.classList.add("active");
-      this.$refs.name.focus();
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };
